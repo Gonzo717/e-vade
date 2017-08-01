@@ -32,9 +32,9 @@ class TutorialHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/tutorial.html')
         self.response.out.write(template.render())
 
-class AboutHandler(webapp2.RequestHandler):
+class RankHandler(webapp2.RequestHandler):
     def get(self):
-        teamplate = jinja_environment.get_template('templates/about.html')
+        teamplate = jinja_environment.get_template('templates/rankings.html')
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
