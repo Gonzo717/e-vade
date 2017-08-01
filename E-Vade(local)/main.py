@@ -38,12 +38,6 @@ class TutorialHandler(webapp2.RequestHandler):
 class RankHandler(webapp2.RequestHandler):
     def get(self):
             template = jinja_environment.get_template("templates/rankings.html")
-            userName = self.request.get("name")
-            points = int(self.request.get("score"))
-            self.response.write(userName)
-            self.response.write(points)
-            my_score = Entry(name = userName, score = points)
-            my_score.put()
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):

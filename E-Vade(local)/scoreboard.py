@@ -1,5 +1,7 @@
 from google.appengine.ext import ndb
 
-class Entry(ndb.Model):
-    name = ndb.StringProperty(required = True)
-    score = ndb.IntegerProperty(repeated = True)
+#model for scoreboard
+
+class Scoreboard(ndb.Model)
+    username = ndb.StringProperty()
+    score = ndb.IntegerProperty(repeated = True) )
