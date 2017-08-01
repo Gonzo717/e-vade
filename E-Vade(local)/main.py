@@ -18,13 +18,10 @@ from google.appengine.ext import ndb
 import webapp2
 import jinja2
 import os
+from scoreboard import Entry
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
-    
-class Entry(ndb.Model):
-    name = ndb.StringProperty(required = True)
-    score = ndb.IntegerProperty(repeated = True)
 
 
 class MainHandler(webapp2.RequestHandler):
