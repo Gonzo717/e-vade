@@ -20,6 +20,7 @@ import jinja2
 import os
 
 from scoreboard import Scoreboard
+#from scoreboard import Entry
 
 
 jinja_environment = jinja2.Environment(
@@ -39,9 +40,9 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
-
         template = jinja_environment.get_template("templates/rankings.html")
         self.response.out.write(template.render())
+
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
