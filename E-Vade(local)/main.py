@@ -26,9 +26,14 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/e-vade.html')
         self.response.out.write(template.render())
 
+
 class TutorialHandler(webapp2, RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/tutorial.html')
+
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+        teamplate = jinja_environment.get_template('templates/about.html')
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
