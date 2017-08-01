@@ -37,12 +37,8 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
-            template = jinja_environment.get_template("templates/rankings.html")
-=======
         template = jinja_environment.get_template('templates/rankings.html')
         self.response.out.write(template.render())
->>>>>>> eca5c756199a4af6e8d1c7517ab03302a8c280ba
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
