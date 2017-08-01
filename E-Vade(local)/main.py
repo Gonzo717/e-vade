@@ -37,7 +37,7 @@ class AboutHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-    ('/tutorial', TutorialHandler)
+    ('/', MainHandler),
+    ('/tutorial', TutorialHandler),
     ('/about', AboutHandler)
 ], debug=True)
