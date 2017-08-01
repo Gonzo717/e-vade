@@ -30,6 +30,7 @@ class MainHandler(webapp2.RequestHandler):
 class TutorialHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/tutorial.html')
+        self.response.out.write(template.render())
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
