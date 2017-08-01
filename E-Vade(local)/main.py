@@ -18,13 +18,9 @@ from google.appengine.ext import ndb
 import webapp2
 import jinja2
 import os
-<<<<<<< HEAD
-from scoreboard import Scoreboard
-#from scoreboard import Entry
-=======
 
 from scoreboard import Scoreboard
->>>>>>> 0ee894a558aeaa6b46ac28a5b6463026aa32a872
+#from scoreboard import Entry
 
 
 jinja_environment = jinja2.Environment(
@@ -44,17 +40,9 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
         template = jinja_environment.get_template("templates/rankings.html")
         self.response.out.write(template.render())
 
-        template = jinja_environment.get_template('templates/rankings.html')
-        self.response.out.write(template.render())
-=======
-
-        template = jinja_environment.get_template("templates/rankings.html")
-        self.response.out.write(template.render())
->>>>>>> 0ee894a558aeaa6b46ac28a5b6463026aa32a872
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
