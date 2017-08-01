@@ -3,3 +3,21 @@ $(document).bind('keypress', function(e) {
         alert("it worked");
     }
 });
+$(document).keydown(function(e) {
+    if(e.which === 37){
+        alert("left");
+    }
+});
+$(document).keydown(function(e) {
+    if(e.which === 38){
+        alert("up");
+    }
+});$(document).keydown(function(e) {
+    if(e.which === 39){
+        alert("right");
+    }
+});$(document).keydown(function(e) {
+    if(e.which === 40){
+        alert("down");
+    }
+});
