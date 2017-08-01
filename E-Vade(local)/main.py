@@ -18,7 +18,7 @@ from google.appengine.ext import ndb
 import webapp2
 import jinja2
 import os
-from scoreboard import Entry
+#from scoreboard import Entry
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
