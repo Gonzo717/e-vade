@@ -6,7 +6,7 @@ $(document).bind('keypress', function(e) {
 $(document).keydown(function(e) {
     if(e.which === 37){
       //  alert("left");
-        $("#(0,0)").text("working"):
+        $("#(0,0)").text("working");
     }
 });
 $(document).keydown(function(e) {
