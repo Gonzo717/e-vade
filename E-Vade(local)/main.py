@@ -45,6 +45,10 @@ class AboutHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/tutorial', TutorialHandler),
+<<<<<<< HEAD
     ('/about', AboutHandler),
     ('/rankings', RankHandler)
+=======
+    ('/about', AboutHandler)
+>>>>>>> 6aeb89d1c5586a807c8f525503f6da7ef4429d1a
 ], debug=True)
