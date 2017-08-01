@@ -1,7 +1,9 @@
 h1 {
   color: darkblue;
+  border-width: thick;
+  border-style: solid;
   border-color:grey;
-  border-width: medium;
+  padding: 10px;
   text-align: center;
   font-size: 80px;
 }
