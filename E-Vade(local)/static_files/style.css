@@ -7,10 +7,6 @@ html {
   background-color: lightblue;
 }
 
-p {
-  background-color: gray;
-  color: lightblue;
-}
 #nav-bar li{
   display: inline;
   text-align: center;
