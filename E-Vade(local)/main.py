@@ -34,11 +34,17 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
-        teamplate = jinja_environment.get_template('templates/rankings.html')
+        template = jinja_environment.get_template('templates/rankings.html')
+        self.response.out.write(template.render())
+
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/about.html')
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-    ('/tutorial', TutorialHandler)
-    ('/about', AboutHandler)
+    ('/', MainHandler),
+    ('/tutorial', TutorialHandler),
+    ('/about', AboutHandler),
+    ('/rankings', RankHandler)
 ], debug=True)
