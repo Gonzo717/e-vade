@@ -6,3 +6,10 @@ h1 {
 html {
   background-color: lightblue;
 }
+#nav-bar li{
+  display: inline;
+  /*list-style: none;
+  background-color: black;
+  margin: 10px;
+  border-radius: 5px*/
+}
