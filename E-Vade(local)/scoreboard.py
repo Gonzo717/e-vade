@@ -16,8 +16,8 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/rankings.html")
         userName = self.request.get("name")
         points = int(self.request.get("score"))
-        #self.response.write(userName)
-        #self.response.write(points)
+        self.response.write(userName)
+        self.response.write(points)
         my_snack = Snack(name = userName, score = points)
         my_snack.put()
 
