@@ -20,3 +20,13 @@ class MainHandler(webapp2.RequestHandler):
         #self.response.write(points)
         my_snack = Snack(name = userName, score = points)
         my_snack.put()
+
+class DisplayHandler(webapp2.RequestHandler):
+    def get(self):
+        query = Entry.query()
+        results = query.fetch()
+        length = len(results)
+
+        for i in range(length):
+            self.response.write(results[i].kind)
+            self.response.write("<br>")
