@@ -21,6 +21,7 @@ import os
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+    
 class Entry(ndb.Model):
     name = ndb.StringProperty(required = True)
     score = ndb.IntegerProperty(repeated = True)
