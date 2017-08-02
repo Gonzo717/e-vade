@@ -7,17 +7,14 @@ $(document).keydown(function(e) {
     if(e.which === 37){
       //  alert("left");
         $("#0_0").text("x");
+        move()
     }
 });
 $(document).keydown(function(e) {
     if(e.which === 38){
-      move('#1_0')
-        .x(50)
-        .y(0)
-        .end();
+        alert("up");
     }
-});
-$(document).keydown(function(e) {
+});$(document).keydown(function(e) {
     if(e.which === 39){
         alert("right");
     }
