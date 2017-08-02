@@ -39,9 +39,14 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
+        username = self.request.get("username")
+        my_scores = Scoreboard(username = username)
+        my_scores.put()
+
+class DisplayHandler(webapp2.RequestHandler):
+    def get(self):
         template = jinja_environment.get_template("templates/rankings.html")
         self.response.out.write(template.render())
-
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
