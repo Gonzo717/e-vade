@@ -1,5 +1,16 @@
 var user_location = "0_0"
-{{ character }}
+
+//var character = 800
+
+//user_location = character
+// $(document).bind('keypress', function(e) {
+//     if(e.which === 13){
+//         console.log(user_location);
+//         $("#sun").append($(user_location));
+//     }
+// });
+
+var myGamePiece = "#sun";
 
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
@@ -11,13 +22,13 @@ function getY(location) {
   return parseInt(y_str);
 }
 
-
 function left() {
   user_location = (getX(user_location)-1) + "_" + getY(user_location)//getY(parseInt(user_location+1))
 // EDGE CODE
   if (getX(user_location)<0){
       user_location= "0_" + getY(user_location).toString()
   }
+  $("#sun").append($(user_location));
 }
 function up() {
   user_location = getX(user_location) + "_" + (getY(user_location)-1)//getY(parseInt(user_location+1))
@@ -28,6 +39,7 @@ function right() {
 function down() {
   //return getX(user_location) + 1;
   user_location = getX(user_location) + "_" + (getY(user_location)+1)//getY(parseInt(user_location+1))
+  $("#sun").append($(user_location));
 }
 $(document).bind('keypress', function(e) {
     if(e.which === 13){
@@ -37,7 +49,7 @@ $(document).bind('keypress', function(e) {
 $(document).keydown(function(e) {
     if(e.which === 37){
       //  alert("left");
-        $("#0_0").text("x");
+        $("#0_0").get("sun");
         console.log(user_location);
     }
 });
