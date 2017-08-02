@@ -1,26 +1,33 @@
 var user_location = "0_0"
+{{ character }}
 
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
-  return x_str;
+  return parseInt(x_str);
 }
 
 function getY(location) {
   y_str = location.substring(location.indexOf('_')+1, location.length);
-  return y_str;
+  return parseInt(y_str);
 }
-function left() {
 
+
+function left() {
+  user_location = (getX(user_location)-1) + "_" + getY(user_location)//getY(parseInt(user_location+1))
+// EDGE CODE
+  if (getX(user_location)<0){
+      user_location= "0_" + getY(user_location).toString()
+  }
 }
 function up() {
-
+  user_location = getX(user_location) + "_" + (getY(user_location)-1)//getY(parseInt(user_location+1))
 }
 function right() {
-
+  user_location = (getX(user_location)+1) + "_" + getY(user_location)//getY(parseInt(user_location+1))
 }
 function down() {
   //return getX(user_location) + 1;
-  user_location = getX(user_location) + "_" + getY(user_location+"1")
+  user_location = getX(user_location) + "_" + (getY(user_location)+1)//getY(parseInt(user_location+1))
 }
 $(document).bind('keypress', function(e) {
     if(e.which === 13){
