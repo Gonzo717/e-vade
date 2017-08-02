@@ -68,3 +68,6 @@ p, #directions li{
   background-color: grey;
   list-style:none;
 }
+p {
+  text-align: center;
+}

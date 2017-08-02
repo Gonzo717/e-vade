@@ -39,19 +39,22 @@ class TutorialHandler(webapp2.RequestHandler):
 
 class RankHandler(webapp2.RequestHandler):
     def get(self):
-        username = self.request.get("username")
-        my_scores = Scoreboard(username = username)
-        my_scores.put()
-
-class DisplayHandler(webapp2.RequestHandler):
-    def get(self):
         template = jinja_environment.get_template("templates/rankings.html")
-        self.response.out.write(template.render())
+        username = self.request.get("username")
+        score = self.request.get("score")
+        if score != "":
+            score = int(score)
+            my_score = Scoreboard(username = username, score = score)
+            my_score.put()
+        query = Scoreboard.query().order(-Scoreboard.score)
+        render_data={}
+        render_data['scoreboard']=query.fetch(20)
+        self.response.write(template.render(render_data))
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/about.html')
-        self.response.out.write(template.render())
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
