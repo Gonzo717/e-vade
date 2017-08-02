@@ -11,9 +11,13 @@ $(document).keydown(function(e) {
 });
 $(document).keydown(function(e) {
     if(e.which === 38){
-        alert("up");
+      move('#1_0')
+        .x(50)
+        .y(0)
+        .end();
     }
-});$(document).keydown(function(e) {
+});
+$(document).keydown(function(e) {
     if(e.which === 39){
         alert("right");
     }

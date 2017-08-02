@@ -36,10 +36,8 @@ ul.nav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #99b3e6
-;
+  background-color: #99b3e6;
 }
-
 .nav li {
   float:left;
   border-right: 1px solid black;
