@@ -49,7 +49,7 @@ $(document).bind('keypress', function(e) {
 $(document).keydown(function(e) {
     if(e.which === 37){
       //  alert("left");
-        $("#0_0").get("sun");
+        $("#0_0").html("<img id='sun' src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
         console.log(user_location);
     }
 });
