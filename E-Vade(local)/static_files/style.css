@@ -1,32 +1,71 @@
 h1 {
-  color: darkblue;
-  border-width: thick;
   border-style: solid;
+  color: darkblue;
   border-color:grey;
+  border-width: thick;
+  border-radius: 15px;
   padding: 10px;
   text-align: center;
   font-size: 80px;
+  background: url(forest.jpeg);
+  margin-right: 250px;
+  margin-left: 250px;
 }
-
-form {
+table {
+  background: url(1.jpg);
+}
+div {
+    text-align: center;
+}
+span {
   color: darkblue;
-  text-align: center;
+  border-style: ridge;
+  display: inline-block;
+  border-collapse: collapse;
+  background-color: darkgrey;
 }
 html {
-  background-color: lightblue;
+  background: url(dark-background-wallpaper.jpeg);
 }
 
-#nav-bar li{
-  display: inline;
+ul.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav li {
+  float:left;
+  border-right: 1px solid #bbb;
+}
+
+.nav li a {
+  display: block;
+  background-color: #333;
   text-align: center;
-  list-style: none;
-  background-color: grey;
-  margin: 10px;
-  border-radius: 5px;
-  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
 }
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+.title_for_pages {
+  border-style: solid;
+  background-color: darkblue;
+  display: inline;
+}
+p, #directions li{
+  border-style: solid;
+  background-color: grey;
+  list-style:none;
 }
