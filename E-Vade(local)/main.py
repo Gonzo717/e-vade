@@ -20,7 +20,6 @@ import jinja2
 import os
 
 from scoreboard import Scoreboard
-#from scoreboard import Entry
 
 
 jinja_environment = jinja2.Environment(
