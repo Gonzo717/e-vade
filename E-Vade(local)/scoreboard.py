@@ -4,6 +4,4 @@ from google.appengine.ext import ndb
 
 class Scoreboard(ndb.Model):
     username = ndb.StringProperty()
-
-
-    score = ndb.IntegerProperty(repeated = True)
+    score = ndb.IntegerProperty()
