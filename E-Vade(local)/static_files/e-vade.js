@@ -12,11 +12,14 @@ function getY(location) {
 }
 function ballmove() {
   // $("#" + ball).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
-  ball = getX(ball) + "_" + getY(ball); //getY(parseInt(user_location+1))
+  ball = (getX(ball)+1)%10 + "_" + (getY(ball)+1)%10; //getY(parseInt(user_location+1))
   // EDGE CODE
-  $("#" + ball).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
+  $("#" + ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
   console.log(ball);
 }
+setInterval(
+  ballmove, 1000
+);
 function left() {
   $("#" + user_location).html("");
   user_location = (getX(user_location) - 1) + "_" + getY(user_location) //getY(parseInt(user_location+1))
