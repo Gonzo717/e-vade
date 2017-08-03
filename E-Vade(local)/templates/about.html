@@ -1,20 +1,36 @@
 <html>
+
 <head>
   <title>E-Vade</title>
-  <link rel = "stylesheet" href= "/resources/style.css">
+  <link rel="stylesheet" href="/resources/style.css">
 </head>
+
 <body>
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <div id="nav-bar">
-    <ul class = "nav">
+    <ul class="nav">
       <li><a href="/">E-Vade</a></li>
       <li><a href="/tutorial">Tutorial</a></li>
       <li><a href="/rankings">Ranking</a></li>
       <li><a href="/about">About</a></li>
+      <li>
+        <div class="fb-share-button" data-href="http://e-vade.appspot.com/" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fe-vade.appspot.com%2F&amp;src=sdkpreparse">Share</a></div>
+      </li>
     </ul>
   </div>
-<h1> E-vade </h1>
-<div>
-<h2 class="title_for_pages"> Why? <h2>
+  <h1> E-vade </h1>
+  <div>
+    <h2 class="title_for_pages"> Why? <h2>
   <p> We decided to create this game because . . . </p>
 </div>
 <div>
