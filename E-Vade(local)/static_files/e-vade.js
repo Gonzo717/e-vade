@@ -1,6 +1,6 @@
 var user_location = "0_0"
 var ball = "5_0"
-
+{
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
   return parseInt(x_str);
@@ -16,6 +16,9 @@ function ballmove() {
   ball = (getX(ball) + 1) % 10 + "_" + (getY(ball) + 1) % 10; //getY(parseInt(user_location+1))
   $("#" + ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
   console.log(ball);
+  if (ball == user_location){
+    alert("u los");
+  }
 }
 setInterval(
   ballmove, 1000
@@ -29,6 +32,9 @@ function left() {
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
   console.log(user_location);
+  if (ball == user_location){
+    alert("u los");
+  }
 }
 
 function up() {
@@ -38,6 +44,9 @@ function up() {
     user_location = getX(user_location).toString() + "_0"
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
+  if (ball == user_location){
+    alert("u los");
+  }
 }
 
 function right() {
@@ -47,6 +56,9 @@ function right() {
     user_location = "9_" + getY(user_location).toString()
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
+  if (ball == user_location){
+    alert("u los");
+  }
 }
 
 function down() {
@@ -56,6 +68,10 @@ function down() {
     user_location = getX(user_location).toString() + "_9"
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
+  if (ball == user_location){
+    alert("u los");
+  }
+}
 }
 
 $(document).bind('keypress', function(e) {
@@ -81,7 +97,6 @@ $(document).keydown(function(e) {
     ballmove();
   }
 });
-$(document).ready(ballmove(ball));
 
 var ar = new Array(37, 38, 39, 40)
 
