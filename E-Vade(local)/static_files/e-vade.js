@@ -1,5 +1,7 @@
 var user_location = "0_0"
 var ball = "5_0"
+var directionx = 1
+var directiony = 1
 
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
@@ -13,16 +15,20 @@ function getY(location) {
 
 function ballmove() {
   $("#" + ball).html("");
-  ball = (getX(ball) + 1) % 10 + "_" + (getY(ball) + 1) % 10; //getY(parseInt(user_location+1))
+  ball = (getX(ball) + 1*(directionx)) % 10 + "_" + (getY(ball) + 1*(directiony)) % 10; //getY(parseInt(user_location+1))
+  if (getX(ball) == 9 || getX(ball) == 0){
+    directionx = -directionx;
+  }
+  if (getY(ball)==9 || getY(ball)==0) {
+    directiony = -directiony;
+  }
   $("#" + ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
   console.log(ball);
   if (ball == user_location){
     alert("u los");
   }
 }
-setInterval(
-  ballmove, 1000
-);
+
 
 function left() {
   $("#" + user_location).html("");
@@ -72,35 +78,17 @@ function down() {
     alert("u los");
   }
 }
-}
 
 $(document).bind('keypress', function(e) {
-  if (e.which === 13) {
+  if (e.which === 32) {
     console.log(user_location);
+    setInterval(
+      ballmove, 1000
+    );
+    $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
+
   }
 });
-
-if (e.which === 13) {
-  console.log(user_location);
-  ballmove();
-
-  $(document).keydown(function(e) {
-    if (e.which === 37) {
-      left();
-    }
-    if (e.which === 38) {
-      up();
-    }
-    if (e.which === 39) {
-      right();
-    }
-    if (e.which === 40) {
-      down();
-    }
-  });
-}
-  $(document).ready(ballmove(ball));
-  //ballmove(ball);
 $(document).keydown(function(e) {
   if (e.which === 37) {
     left();
@@ -116,18 +104,13 @@ $(document).keydown(function(e) {
   }
   if (e.which === 13) {
     console.log(user_location);
-    ballmove();
+    // ballmove();
   }
 });
 
-  var ar = new Array(37, 38, 39, 40)
 
-  $(document).keydown(function(e) {
-    var key = e.which;
-    if ($.inArray(key, ar) > -1) {
-      e.preventDefault();
-    }
-  });
+ var ar =  Array(37, 38, 39, 40)
+
 $(document).keydown(function(e) {
   var key = e.which;
   if ($.inArray(key, ar) > -1) {
