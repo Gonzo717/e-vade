@@ -19,9 +19,7 @@ function getY(location) {
 
 function ballmove() {
   $("#" + ball).html("");
-  // $("#" + ball).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
-  ball = (getX(ball) + 1) % 10 + "_" + (getY(ball)) % 10; //getY(parseInt(user_location+1))
-  // EDGE CODE
+  ball = (getX(ball) + 1) % 10 + "_" + (getY(ball) + 1) % 10; //getY(parseInt(user_location+1))
   $("#" + ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
   console.log(ball);
 }
@@ -34,8 +32,7 @@ setInterval(
 
 function left() {
   $("#" + user_location).html("");
-  user_location = (getX(user_location) - 1) + "_" + getY(user_location) //getY(parseInt(user_location+1))
-  // EDGE CODE
+  user_location = (getX(user_location) - 1) + "_" + getY(user_location)
   if (getX(user_location) < 0) {
     user_location = "0_" + getY(user_location).toString()
   }
@@ -45,7 +42,7 @@ function left() {
 
 function up() {
   $("#" + user_location).html("");
-  user_location = getX(user_location) + "_" + (getY(user_location) - 1) //getY(parseInt(user_location+1))
+  user_location = getX(user_location) + "_" + (getY(user_location) - 1)
   if (getY(user_location) < 0) {
     user_location = getX(user_location).toString() + "_0"
   }
@@ -54,7 +51,7 @@ function up() {
 
 function right() {
   $("#" + user_location).html("");
-  user_location = (getX(user_location) + 1) + "_" + getY(user_location) //getY(parseInt(user_location+1))
+  user_location = (getX(user_location) + 1) + "_" + getY(user_location)
   if (getX(user_location) > 9) {
     user_location = "9_" + getY(user_location).toString()
   }
@@ -62,9 +59,8 @@ function right() {
 }
 
 function down() {
-  //return getX(user_location) + 1;
   $("#" + user_location).html("");
-  user_location = getX(user_location) + "_" + (getY(user_location) + 1) //getY(parseInt(user_location+1))
+  user_location = getX(user_location) + "_" + (getY(user_location) + 1)
   if (getY(user_location) > 9) {
     user_location = getX(user_location).toString() + "_9"
   }
@@ -118,9 +114,12 @@ $(document).keydown(function(e) {
   }
 });
 $(document).ready(ballmove(ball));
+<<<<<<< HEAD
 //ballmove(ball);
 >>>>>>> 55476c714464d8fc2616567426c1a90b55335d01
 
+=======
+>>>>>>> 98f05b74189ca08590fbcccf7c5e95fa011c522e
 
   var ar = new Array(37, 38, 39, 40)
 
