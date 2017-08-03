@@ -1,5 +1,11 @@
 var user_location = "0_0"
+var ball = "#5_0"
 
+function ballmove() {
+$(ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
+}
+
+ballmove()
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
   return parseInt(x_str);
