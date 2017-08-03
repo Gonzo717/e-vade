@@ -1,6 +1,6 @@
 var user_location = "0_0"
 var ball = "5_0"
-{
+
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
   return parseInt(x_str);
@@ -79,6 +79,28 @@ $(document).bind('keypress', function(e) {
     console.log(user_location);
   }
 });
+
+if (e.which === 13) {
+  console.log(user_location);
+  ballmove();
+
+  $(document).keydown(function(e) {
+    if (e.which === 37) {
+      left();
+    }
+    if (e.which === 38) {
+      up();
+    }
+    if (e.which === 39) {
+      right();
+    }
+    if (e.which === 40) {
+      down();
+    }
+  });
+}
+  $(document).ready(ballmove(ball));
+  //ballmove(ball);
 $(document).keydown(function(e) {
   if (e.which === 37) {
     left();
@@ -98,8 +120,14 @@ $(document).keydown(function(e) {
   }
 });
 
-var ar = new Array(37, 38, 39, 40)
+  var ar = new Array(37, 38, 39, 40)
 
+  $(document).keydown(function(e) {
+    var key = e.which;
+    if ($.inArray(key, ar) > -1) {
+      e.preventDefault();
+    }
+  });
 $(document).keydown(function(e) {
   var key = e.which;
   if ($.inArray(key, ar) > -1) {
