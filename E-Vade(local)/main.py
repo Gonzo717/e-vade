@@ -18,7 +18,7 @@ from google.appengine.ext import ndb
 import webapp2
 import jinja2
 import os
-
+from random import randint
 from scoreboard import Scoreboard
 
 

@@ -1,7 +1,8 @@
 var user_location = "0_0"
-var ball = "5_0"
-var directionx = 1
-var directiony = 1
+//var ball = Math.floor(Math.random()*10) + "_" + 0
+// var directionx = 1
+// var directiony = 1
+var balls = []
 
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
@@ -13,22 +14,60 @@ function getY(location) {
   return parseInt(y_str);
 }
 
-function ballmove() {
-  $("#" + ball).html("");
-  ball = (getX(ball) + 1*(directionx)) % 10 + "_" + (getY(ball) + 1*(directiony)) % 10; //getY(parseInt(user_location+1))
-  if (getX(ball) == 9 || getX(ball) == 0){
-    directionx = -directionx;
-  }
-  if (getY(ball)==9 || getY(ball)==0) {
-    directiony = -directiony;
-  }
-  $("#" + ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
-  console.log(ball);
-  if (ball == user_location){
-    alert("u los");
+function getCoordinates(ball) {
+  return $("#" + ball.x + "_" + ball.y);
+}
+
+function checkLoss() {
+  for (i = 0; i < balls.length; i++) {
+    var ball = balls[i];
+    if (ball.x + "_" + ball.y == user_location) {
+      alert("u lost");
+    }
   }
 }
 
+function ballmove() {
+  for (i = 0; i < balls.length; i++) {
+    var ball = balls[i];
+    getCoordinates(ball).html("");
+    ball.x = ball.x + 1 * (ball.dir_x) % 10
+    ball.y = ball.y + 1 * (ball.dir_y) % 10; //getY(parseInt(user_location+1))
+    if (ball.x == 9 || ball.x == 0) {
+      ball.dir_x = -ball.dir_x
+    }
+    if (ball.y == 9 || ball.y == 0) {
+      ball.dir_y = -ball.dir_y;
+    }
+    getCoordinates(ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
+    console.log(ball.x + "_" + ball.y);
+  }
+  checkLoss();
+}
+
+function addBall() {
+  do{
+    var check = false;
+  var ball = {
+    x: Math.floor(Math.random() * 10),
+    y: Math.floor(Math.random() * 10),
+    dir_x: 1,
+    dir_y: 1
+  }
+
+ for (i = 0; i < balls.length; i++) {
+    var b = balls[i];
+     if (ball.x == b.x && ball.y == b.y && ball.dir_x == b.dir_x && ball.dir_y == b.dir_y){
+        check = true;
+    }
+  }
+}
+  while (check)
+  balls.push(ball);
+  $("#" + ball.x + "_" + ball.y).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
+  if (balls.length == 5)
+    clearInterval(addBallID);
+}
 
 function left() {
   $("#" + user_location).html("");
@@ -38,9 +77,7 @@ function left() {
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
   console.log(user_location);
-  if (ball == user_location){
-    alert("u los");
-  }
+  checkLoss();
 }
 
 function up() {
@@ -50,9 +87,7 @@ function up() {
     user_location = getX(user_location).toString() + "_0"
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
-  if (ball == user_location){
-    alert("u los");
-  }
+  checkLoss();
 }
 
 function right() {
@@ -62,9 +97,7 @@ function right() {
     user_location = "9_" + getY(user_location).toString()
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
-  if (ball == user_location){
-    alert("u los");
-  }
+  checkLoss();
 }
 
 function down() {
@@ -74,19 +107,21 @@ function down() {
     user_location = getX(user_location).toString() + "_9"
   }
   $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
-  if (ball == user_location){
-    alert("u los");
-  }
+  checkLoss();
 }
 
 $(document).bind('keypress', function(e) {
+  addBall();
+
   if (e.which === 32) {
     console.log(user_location);
+    addBallID = setInterval(
+      addBall, 5000
+    );
     setInterval(
       ballmove, 1000
     );
     $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
-
   }
 });
 $(document).keydown(function(e) {
@@ -109,7 +144,7 @@ $(document).keydown(function(e) {
 });
 
 
- var ar =  Array(37, 38, 39, 40)
+var ar = Array(37, 38, 39, 40)
 
 $(document).keydown(function(e) {
   var key = e.which;
