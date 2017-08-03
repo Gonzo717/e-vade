@@ -38,14 +38,18 @@ function up() {
   $("#" + user_location).html("");
   user_location = getX(user_location) + "_" + (getY(user_location) - 1) //getY(parseInt(user_location+1))
   $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
-
+  if (getY(user_location) < 0) {
+    user_location = getX(user_location).toString() + "_0"
+  }
 }
 
 function right() {
   $("#" + user_location).html("");
   user_location = (getX(user_location) + 1) + "_" + getY(user_location) //getY(parseInt(user_location+1))
   $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
-
+  if (getX(user_location) > 9) {
+    user_location = "9_" + getY(user_location).toString()
+  }
 }
 
 function down() {
@@ -53,7 +57,9 @@ function down() {
   $("#" + user_location).html("");
   user_location = getX(user_location) + "_" + (getY(user_location) + 1) //getY(parseInt(user_location+1))
   $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
-
+  if (getY(user_location) > 9) {
+    user_location = getX(user_location).toString() + "_9"
+  }
 }
 $(document).bind('keypress', function(e) {
   if (e.which === 13) {
