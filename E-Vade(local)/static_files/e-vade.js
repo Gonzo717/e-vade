@@ -71,7 +71,7 @@ $(document).keydown(function(e) {
   }
 });
 
-  // $(document).keydown(function(e) {
+  $(document).keydown(function(e) {
   //   if (e.which === 40) {
   //     // console.log("down");
   //     // console.log(user_location);
