@@ -3,16 +3,7 @@ var ball = "5_0"
 
 
 
-<<<<<<< HEAD
 
-=======
-function ballmove() {
-  $(ball).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
-}
-
-ballmove()
-
->>>>>>> 86c2f08574356dc66166fc13fef4483d1ce916fa
 function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
   return parseInt(x_str);
@@ -22,7 +13,7 @@ function getY(location) {
   y_str = location.substring(location.indexOf('_') + 1, location.length);
   return parseInt(y_str);
 }
-<<<<<<< HEAD
+
 function ballmove() {
   // $("#" + ball).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
   ball = getX(ball) + "_" + getY(ball); //getY(parseInt(user_location+1))
@@ -30,9 +21,7 @@ function ballmove() {
   $("#" + ball).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
   console.log(ball);
 }
-=======
 
->>>>>>> 86c2f08574356dc66166fc13fef4483d1ce916fa
 function left() {
   $("#" + user_location).html("");
   user_location = (getX(user_location) - 1) + "_" + getY(user_location) //getY(parseInt(user_location+1))
@@ -77,33 +66,34 @@ $(document).bind('keypress', function(e) {
     console.log(user_location);
   }
 });
-$(document).keydown(function(e) {
-  if (e.which === 37) {
-    left();
-  }
-  if (e.which === 38) {
-    up();
-  }
-  if (e.which === 39) {
-    right();
-  }
-  if (e.which === 40) {
-    down();
-  }
-  if (e.which === 13) {
-    console.log(user_location);
-    ballmove();
-  }
-});
-$( document ).ready(ballmove(ball));
-//ballmove(ball);
+if (e.which === 13) {
+  console.log(user_location);
+  ballmove();
+
+  $(document).keydown(function(e) {
+    if (e.which === 37) {
+      left();
+    }
+    if (e.which === 38) {
+      up();
+    }
+    if (e.which === 39) {
+      right();
+    }
+    if (e.which === 40) {
+      down();
+    }
+  });
+}
+  $(document).ready(ballmove(ball));
+  //ballmove(ball);
 
 
-var ar = new Array(37, 38, 39, 40)
+  var ar = new Array(37, 38, 39, 40)
 
-$(document).keydown(function(e) {
-  var key = e.which;
-  if ($.inArray(key, ar) > -1) {
-    e.preventDefault();
- }
-});
+  $(document).keydown(function(e) {
+    var key = e.which;
+    if ($.inArray(key, ar) > -1) {
+      e.preventDefault();
+    }
+  });
