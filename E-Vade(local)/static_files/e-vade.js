@@ -4,6 +4,7 @@ function getX(location) {
   x_str = location.substring(0, location.indexOf('_'));
   return parseInt(x_str);
 }
+
 function getY(location) {
   y_str = location.substring(location.indexOf('_') + 1, location.length);
   return parseInt(y_str);
@@ -15,7 +16,7 @@ function left() {
   if (getX(user_location) < 0) {
     user_location = "0_" + getY(user_location).toString()
   }
-  $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
+  $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
   console.log(user_location);
 }
 function up() {
@@ -24,7 +25,7 @@ function up() {
   if (getY(user_location) < 0) {
     user_location = getX(user_location).toString() + "_0"
   }
-  $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
+  $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
 }
 function right() {
   $("#" + user_location).html("");
@@ -32,7 +33,7 @@ function right() {
   if (getX(user_location) > 9) {
     user_location = "9_" + getY(user_location).toString()
   }
-  $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
+  $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
 }
 function down() {
   //return getX(user_location) + 1;
@@ -41,7 +42,7 @@ function down() {
   if (getY(user_location) > 9) {
     user_location = getX(user_location).toString() + "_9"
   }
-  $("#" + user_location).html("<img src='https://pbs.twimg.com/profile_images/641353910561566720/VSxsyxs7.jpg' width='50' height='50'></img>");
+  $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
 }
 
 $(document).bind('keypress', function(e) {
