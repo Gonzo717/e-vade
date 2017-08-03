@@ -7,12 +7,14 @@ h1 {
   padding: 10px;
   text-align: center;
   font-size: 80px;
-  background: url(forest.jpeg);
+  background: url(spacee.jpg);
+  background-size: 100%;
   margin-right: 250px;
   margin-left: 250px;
 }
 table {
-  background: url(1.jpg);
+  background: url(space.jpg);
+  background-size: 175%;
 }
 div {
     text-align: center;
@@ -25,7 +27,8 @@ span {
   background-color: darkgrey;
 }
 html {
-  background: url(dark-background-wallpaper.jpeg);
+  background: url(Widescreen-Space.jpg);
+  background-size: 100%;
 }
 
 ul.nav {
