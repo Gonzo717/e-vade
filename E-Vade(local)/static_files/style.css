@@ -17,6 +17,7 @@ h1#begin{
   margin-right: 475px;
   margin-left: 475px;
 }
+
 table {
   background: url(asteroid.jpg);
   background-size: 125%;
@@ -77,7 +78,8 @@ table, tr, td {
 .title_for_pages {
   border-style: solid;
   background-color: darkblue;
-  display: inline;
+  margin-left: 600px;
+  margin-right: 600px;
 }
 p, #directions li{
   border-style: solid;
@@ -93,4 +95,5 @@ p {
 h2 {
   background: url(Widescreen-Space.jpg);
   color: lightblue;
+  text-align: center;
 }

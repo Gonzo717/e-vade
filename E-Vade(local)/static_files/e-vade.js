@@ -118,10 +118,10 @@ $(document).bind('keypress', function(e) {
   if (e.which === 32) {
     console.log(user_location);
     addBallID = setInterval(
-      addBall, 5000
+      addBall, 1500
     );
     setInterval(
-      ballmove, 1000
+      ballmove, 200
     );
     $("#" + user_location).html("<img src='http://bestanimations.com/Earth&Space/astronaut-animation-9.gif' width='50' height='50'></img>");
   }
