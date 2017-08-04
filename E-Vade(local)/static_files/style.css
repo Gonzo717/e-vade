@@ -13,18 +13,19 @@ h1 {
   margin-left: 250px;
 }
 table {
-  background: url(space.jpg);
-  background-size: 175%;
+  background: url(asteroid.jpg);
+  background-size: 125%;
+  border: 100px solid url(Widescreen-Space.jpg);
 }
 div {
     text-align: center;
 }
 span {
-  color: darkblue;
+  color: #1158DD;
   border-style: ridge;
   display: inline-block;
   border-collapse: collapse;
-  background-color: darkgrey;
+  background-color: #141414;
 }
 html {
   background: url(Widescreen-Space.jpg);
@@ -32,14 +33,14 @@ html {
 }
 
 ul.nav {
-  position: fixed;
+  /*position: fixed;
   top: 0;
-  width: 100%;
+  width: 100%;*/
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #99b3e6;
+  background: url(spacee.jpg);
 }
 .nav li {
   float:left;
@@ -48,17 +49,18 @@ ul.nav {
 
 .nav li a {
   display: block;
-  background-color: #99b3e6;
+  background: url(spacee.jpg);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 li a:hover {
-  background-color: #111;
+  background: url(Widescreen-Space.jpg);
+  background-size: 50%;
 }
 
 table, tr, td {
-    border: 1px solid black;
+    border: 1px solid grey;
     border-collapse: collapse;
     /*overflow: hidden;
     white-space: nowrap;*/
@@ -74,9 +76,16 @@ table, tr, td {
 }
 p, #directions li{
   border-style: solid;
-  background-color: grey;
+  background: url(Widescreen-Space.jpg);
   list-style:none;
+  color: #1158DD  ;
 }
 p {
   text-align: center;
+  color: #1158DD;
+  font-size: 20px;
+}
+h2 {
+  background: url(Widescreen-Space.jpg);
+  color: lightblue;
 }
