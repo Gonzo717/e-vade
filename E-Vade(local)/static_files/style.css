@@ -1,6 +1,6 @@
 h1 {
   border-style: solid;
-  color: darkblue;
+  color: #1052CE;
   border-color:#99b3e6;
   border-width: thick;
   border-radius: 15px;
@@ -11,6 +11,11 @@ h1 {
   background-size: 100%;
   margin-right: 250px;
   margin-left: 250px;
+}
+h1#begin{
+  font-size: 20px;
+  margin-right: 475px;
+  margin-left: 475px;
 }
 table {
   background: url(asteroid.jpg);

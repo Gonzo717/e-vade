@@ -18,11 +18,13 @@ function getCoordinates(ball) {
   return $("#" + ball.x + "_" + ball.y);
 }
 
-function checkLoss() {
+function checkLoss(e) {
+  score = balls.length*100
   for (i = 0; i < balls.length; i++) {
     var ball = balls[i];
     if (ball.x + "_" + ball.y == user_location) {
-      alert("u lost");
+      alert("Game Over, your score is " +score + " please input your username and score on the form");
+      $(location).attr("href", "/rankings");
     }
   }
 }
@@ -65,7 +67,7 @@ function addBall() {
   while (check)
   balls.push(ball);
   $("#" + ball.x + "_" + ball.y).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
-  if (balls.length == 5)
+  if (balls.length == 10)
     clearInterval(addBallID);
 }
 

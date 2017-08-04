@@ -33,6 +33,13 @@
   </div>
   <br>
   <h1> E-vade </h1>
+  <div>
+    <form action="/rankings">
+      <span>Enter your username: <input name="username" type="text"></span> </br>
+      <span>Enter your score: <input name="score" type="text"></span> </br>
+      <span><input type = submit></span>
+    </form>
+  </div>
   <p>
     {% for item in scoreboard %} {{item.username}}:{{item.score}} </br>
     {% endfor %}
