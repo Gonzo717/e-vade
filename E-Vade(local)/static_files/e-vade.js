@@ -67,7 +67,7 @@ function addBall() {
   while (check)
   balls.push(ball);
   $("#" + ball.x + "_" + ball.y).html("<img src='https://opengameart.org/sites/default/files/rock_01_loop.gif' width='50' height='50'></img>");
-  if (balls.length == 10)
+  if (balls.length == 50)
     clearInterval(addBallID);
 }
 
